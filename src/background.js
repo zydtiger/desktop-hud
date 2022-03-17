@@ -16,13 +16,14 @@ protocol.registerSchemesAsPrivileged([
 async function createWindow() {
   // Create the browser window.
   const bounds = electron.screen.getPrimaryDisplay().bounds
+  let [width, height] = [300, 150]
   const win = new BrowserWindow({
     fullscreenable: false,
     maximizable: false,
-    x: bounds.width - 250 - 20,
+    x: bounds.width - width - 20,
     y: 50,
-    width: 250,
-    height: 120,
+    width,
+    height,
     webPreferences: {
       // Use pluginOptions.nodeIntegration, leave this alone
       // See nklayman.github.io/vue-cli-plugin-electron-builder/guide/security.html#node-integration for more info
